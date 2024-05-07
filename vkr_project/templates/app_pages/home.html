@@ -1,0 +1,30 @@
+{% extends "bases/base.html" %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+      {% if user.is_authenticated %}
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        {% for item in items %}
+        <div class="col">
+          <div class="card custom-card">
+            <div class="position-relative">
+              <img src="https://via.placeholder.com/200" class="card-img-top" alt="Placeholder Image">
+              <div class="position-absolute bottom-0 start-0" style="padding: 10px;">
+                <a href="#" class="btn btn-primary go-somewhere" style="display: none;">Читать</a>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Заголовок {{ item }}</h5>
+              <p class="card-text">Описание {{ item }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p>Вы не авторизованы</p>
+      <p><a href="{% url 'password_reset' %}">Сбросить пароль</a></p>
+      <p><a href="{% url 'login' %}">Войти</a></p>
+      {% endif %}
+{% endblock %}

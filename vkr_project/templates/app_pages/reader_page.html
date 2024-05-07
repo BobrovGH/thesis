@@ -1,0 +1,18 @@
+{% extends "bases/base.html" %}
+
+{% block title %}Название книги{% endblock %}
+
+{% block content %}
+{% for paragraph, sentences in paragraphs.items %}
+        <p>{% for sentence in sentences %}
+          <se>
+            {% for word in sentence %}
+            <w class="word" data-bs-toggle="popover" title="Word Info" data-bs-content="This is some information about the word.">{{ word }}</w>
+            {% endfor %}
+        </se>
+        {% endfor %}</p>
+        {% endfor %}
+        <div id="wordPopoverContent" style="display: none;">
+          <p id="wordContent"></p>
+        </div>
+{% endblock %}
