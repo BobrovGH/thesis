@@ -5,9 +5,13 @@ class Author(models.Model):
     name = models.CharField(max_length=100)
     date_birth = models.DateField(null=True, blank=True)
     date_death = models.DateField(null=True, blank=True)
+    def __str__(self):
+        return self.name
 
 class Genre(models.Model):
     name = models.CharField(max_length=100)
+    def __str__(self):
+        return self.name
 
 class Text(models.Model):
     LEVEL_CHOICES = [
@@ -40,8 +44,13 @@ class Text(models.Model):
     language = models.CharField(max_length=2, choices=LANG_CHOICES, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     file = models.FileField(upload_to='text_files/', null=True, blank=True)
+    def __str__(self):
+        return self.title
 
 class TextEditionHistory(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.ForeignKey(Text, on_delete=models.CASCADE)
     edited_on = models.DateTimeField(auto_now_add=True)
+    comment = models.TextField(null=True, blank=True)
+    def __str__(self):
+        return f"{self.user.username} - {self.edited_on}"
