@@ -39,6 +39,7 @@ class Text(models.Model):
     level = models.CharField(max_length=2, choices=LEVEL_CHOICES, null=True, blank=True)
     language = models.CharField(max_length=2, choices=LANG_CHOICES, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
+    file = models.FileField(upload_to='text_files/', null=True, blank=True)
 
 class TextEditionHistory(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
