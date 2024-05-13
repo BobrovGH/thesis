@@ -2,8 +2,10 @@ from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
-from .utils.app_functions import split_paragraphs
+from .utils.app_functions import split_paragraphs, get_analysis_result
 from .models import Text
+from django.http import JsonResponse
+from urllib.parse import unquote
 
 # Create your views here.
 class SignUpView(CreateView):
@@ -58,3 +60,11 @@ def reader_view(request, text_id):
          "column_width": column_width,
          "text": text,},
     )
+
+def get_word_analysis(request):
+    if request.method == 'GET' and 'word' in request.GET:
+        word = unquote(request.GET['word'])
+        analysis_result = get_analysis_result(word)
+        return JsonResponse({'analysis_result': analysis_result})
+    else:
+        return JsonResponse({'error': 'Invalid request'})

@@ -1,30 +1,50 @@
 //подсказки к словам
 $(document).ready(function () {
-    var currentPopover;
-    $('.word').popover({
-        html: true,
-        title: 'Word Info',
-        content: function () {
-            return $('#wordPopoverContent').html();
-        }
-    });
-    $('.word').click(function () {
-        if (currentPopover) {
-            currentPopover.popover('hide');
-        }
+    // Click event handler for <w> elements
+    $('w.word').click(function () {
         var word = $(this).text();
-        $(this).attr('data-bs-original-title', word);
-        $(this).popover('show');
-        currentPopover = $(this);
+        var $this = $(this);
+
+        // Close any open popovers
+        $('.popover').popover('hide');
+
+        // Make AJAX request to get word analysis
+        $.ajax({
+            url: '/get_word_analysis/',
+            type: 'GET',
+            data: {
+                'word': word
+            },
+            success: function (data) {
+                var analysisResult = data.analysis_result;
+
+                // Initialize popover with new content
+                var content = '';
+                for (var i = 2; i < analysisResult.length; i++) {
+                    content += analysisResult[i] + '<br>';
+                }
+                $this.popover({
+                    html: true,
+                    title: 'Слово: ' + analysisResult[0] + '<br> начальная форма: ' + analysisResult[1],
+                    content: content,
+                    trigger: 'manual' // Prevent automatic opening
+                });
+
+                // Show popover
+                $this.popover('show');
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        });
     });
 });
 
 //переход с домашней страницы в раздел для чтения
 document.querySelectorAll('.go-somewhere').forEach(function (button) {
-    // Retrieve the text ID from the data attribute
+    // Получаем ID текста
     var textId = button.dataset.textId;
     button.addEventListener('click', function () {
-        // Redirect to the reader page with the text ID
         window.location.href = "/reader_view/" + textId + "/";
     });
     button.parentElement.parentElement.addEventListener('mouseenter', function () {

@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import SignUpView, home_view_test, reader_view, home_view, reader_view_test
+from .views import SignUpView, home_view_test, reader_view, home_view, reader_view_test, get_word_analysis
 
 
 urlpatterns = [
@@ -9,4 +9,5 @@ urlpatterns = [
     path('reader_view/<int:text_id>/', reader_view, name="reader_page"),
     path("home_test", home_view_test, name="home_page_test"),  # home page test
     path('reader_view_test/', reader_view_test, name="reader_page"),
+    path('get_word_analysis/', get_word_analysis, name='get_word_analysis')
 ]
