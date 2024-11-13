@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://test.org/pl_ru_ontology.owl"
+         xmlns="http://test.org/pl_ru_ontology.owl#">
+
+<owl:Ontology rdf:about="http://test.org/pl_ru_ontology.owl"/>
+
+<owl:ObjectProperty rdf:about="#isSynonym">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#Word"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFalseFriend">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#Word"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasSameEtymology">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#Etymology"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isTranslationOf">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#Word"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFormOf">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#wordForm"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isInTable">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#TableID"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCase">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#case"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasGender">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#gender"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasNumber">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#number"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAspect">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#aspect"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasPerson">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#person"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasTense">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#tense"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasMood">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#mood"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFrom">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#Etymology"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Word">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruWord">
+  <rdfs:subClassOf rdf:resource="#Word"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plWord">
+  <rdfs:subClassOf rdf:resource="#Word"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruNOUN">
+  <rdfs:subClassOf rdf:resource="#ruWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruVERB">
+  <rdfs:subClassOf rdf:resource="#ruWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruADJ">
+  <rdfs:subClassOf rdf:resource="#ruWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruADV">
+  <rdfs:subClassOf rdf:resource="#ruWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruPRT">
+  <rdfs:subClassOf rdf:resource="#ruWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruGRND">
+  <rdfs:subClassOf rdf:resource="#ruWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruPREP">
+  <rdfs:subClassOf rdf:resource="#ruWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruCONJ">
+  <rdfs:subClassOf rdf:resource="#ruWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruPRONOUN">
+  <rdfs:subClassOf rdf:resource="#ruWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plNOUN">
+  <rdfs:subClassOf rdf:resource="#plWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plVERB">
+  <rdfs:subClassOf rdf:resource="#plWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plADJ">
+  <rdfs:subClassOf rdf:resource="#plWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plADV">
+  <rdfs:subClassOf rdf:resource="#plWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plPRT">
+  <rdfs:subClassOf rdf:resource="#plWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plGRND">
+  <rdfs:subClassOf rdf:resource="#plWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plPREP">
+  <rdfs:subClassOf rdf:resource="#plWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plCONJ">
+  <rdfs:subClassOf rdf:resource="#plWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plPRONOUN">
+  <rdfs:subClassOf rdf:resource="#plWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Etymology">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#french">
+  <rdfs:subClassOf rdf:resource="#Etymology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#proto_slavic">
+  <rdfs:subClassOf rdf:resource="#Etymology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#latin">
+  <rdfs:subClassOf rdf:resource="#Etymology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Morphology">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#wordForm">
+  <rdfs:subClassOf rdf:resource="#Morphology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#gender">
+  <rdfs:subClassOf rdf:resource="#Morphology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#case">
+  <rdfs:subClassOf rdf:resource="#Morphology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#number">
+  <rdfs:subClassOf rdf:resource="#Morphology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#aspect">
+  <rdfs:subClassOf rdf:resource="#Morphology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#person">
+  <rdfs:subClassOf rdf:resource="#Morphology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#tense">
+  <rdfs:subClassOf rdf:resource="#Morphology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#mood">
+  <rdfs:subClassOf rdf:resource="#Morphology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TableID">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#именительный">
+  <rdf:type rdf:resource="#case"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#родительный">
+  <rdf:type rdf:resource="#case"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#дательный">
+  <rdf:type rdf:resource="#case"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#винительный">
+  <rdf:type rdf:resource="#case"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#творительный">
+  <rdf:type rdf:resource="#case"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#предложный">
+  <rdf:type rdf:resource="#case"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#звательный">
+  <rdf:type rdf:resource="#case"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#мужской">
+  <rdf:type rdf:resource="#gender"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#женский">
+  <rdf:type rdf:resource="#gender"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#средний">
+  <rdf:type rdf:resource="#gender"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#единственное">
+  <rdf:type rdf:resource="#number"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#множественное">
+  <rdf:type rdf:resource="#number"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#первое">
+  <rdf:type rdf:resource="#person"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#второе">
+  <rdf:type rdf:resource="#person"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#третье">
+  <rdf:type rdf:resource="#person"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#совершенный">
+  <rdf:type rdf:resource="#aspect"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#несовершенный">
+  <rdf:type rdf:resource="#aspect"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#прошедшее">
+  <rdf:type rdf:resource="#tense"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#настоящее">
+  <rdf:type rdf:resource="#tense"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#будущее">
+  <rdf:type rdf:resource="#tense"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#изъявительное">
+  <rdf:type rdf:resource="#mood"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#повелительное">
+  <rdf:type rdf:resource="#mood"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#праслав. *čęstь">
+  <rdf:type rdf:resource="#proto_slavic"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#лат. elementum">
+  <rdf:type rdf:resource="#latin"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#франц. détail">
+  <rdf:type rdf:resource="#french"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>

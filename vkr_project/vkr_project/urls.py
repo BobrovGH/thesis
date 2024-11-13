@@ -21,6 +21,6 @@ from django.views.generic.base import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("thesis_app.urls")),
-    path("accounts/", include("django.contrib.auth.urls")), #sign in and sign up
-    path("user", TemplateView.as_view(template_name="user_page.html"), name="user") #user page
+    path("", include("django.contrib.auth.urls")), #sign in and sign up
+    path("user/", TemplateView.as_view(template_name="app_pages/user_page.html"), name="user") #user page
 ]

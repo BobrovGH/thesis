@@ -1,0 +1,48 @@
+{% extends 'bases/base.html' %}
+
+{% block title %}
+Словарь
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Мой словарь</h2>
+    <div class="row justify-content-start">
+        <div class="col-12 col-md-8">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="col-4 col-md-1">Слово</th>
+                        <th class="col-4 col-md-1">Добавлено</th>
+                        <th class="col-4 col-md-1">Действия</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for word in words %}
+                    <tr>
+                        <td>{{ word.translated_token.word_original|lower }}</td>
+                        <td>{{ word.added_on|date:"d.m.Y H:i" }}</td>
+                        <td>
+                            <a href="{% url 'reader_page' word.translated_token.sentence.text.id %}"
+                                class="btn btn-primary" data-bs-toggle="tooltip" title="Открыть контекст"><i
+                                    class="fa-solid fa-book-open-reader"></i></a>
+                            <button type="button" class="btn btn-primary open-modal" data-bs-toggle="modal"
+                                data-bs-target="#wordModal" data-index="{{ word.translated_token.id }}"
+                                data-bs-toggle="tooltip" title="Подсказка"><i
+                                    class="fa-regular fa-lightbulb"></i></button>
+                            <a href="{% url 'delete_word' word.id %}" class="btn btn-danger" data-bs-toggle="tooltip"
+                                title="Удалить из словаря"><i class="fa-solid fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="3"> В словаре нет слов.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% include "bases/modal.html" %}
+{% endblock %}

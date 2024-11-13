@@ -1,0 +1,3159 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://test.org/pl_ru_ontology.owl"
+         xmlns="http://test.org/pl_ru_ontology.owl#">
+
+<owl:Ontology rdf:about="http://test.org/pl_ru_ontology.owl"/>
+
+<owl:ObjectProperty rdf:about="#isSynonym">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#Word"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFalseFriend">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#Word"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasSameEtymology">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#Etymology"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isTranslationOf">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#Word"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFormOf">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#wordForm"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isInTable">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#TableID"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCase">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#case"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasGender">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#gender"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasNumber">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#number"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAspect">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#aspect"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasPerson">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#person"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasTense">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#tense"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasMood">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#mood"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFrom">
+  <rdfs:domain rdf:resource="#Word"/>
+  <rdfs:range rdf:resource="#Etymology"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Word">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Etymology">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#wordForm">
+  <rdfs:subClassOf rdf:resource="#Morphology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TableID">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#case">
+  <rdfs:subClassOf rdf:resource="#Morphology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#gender">
+  <rdfs:subClassOf rdf:resource="#Morphology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#number">
+  <rdfs:subClassOf rdf:resource="#Morphology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#aspect">
+  <rdfs:subClassOf rdf:resource="#Morphology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#person">
+  <rdfs:subClassOf rdf:resource="#Morphology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#tense">
+  <rdfs:subClassOf rdf:resource="#Morphology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#mood">
+  <rdfs:subClassOf rdf:resource="#Morphology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruWord">
+  <rdfs:subClassOf rdf:resource="#Word"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plWord">
+  <rdfs:subClassOf rdf:resource="#Word"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruNOUN">
+  <rdfs:subClassOf rdf:resource="#ruWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruVERB">
+  <rdfs:subClassOf rdf:resource="#ruWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruADJ">
+  <rdfs:subClassOf rdf:resource="#ruWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruADV">
+  <rdfs:subClassOf rdf:resource="#ruWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruPRT">
+  <rdfs:subClassOf rdf:resource="#ruWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruGRND">
+  <rdfs:subClassOf rdf:resource="#ruWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruPREP">
+  <rdfs:subClassOf rdf:resource="#ruWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruCONJ">
+  <rdfs:subClassOf rdf:resource="#ruWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ruPRONOUN">
+  <rdfs:subClassOf rdf:resource="#ruWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plNOUN">
+  <rdfs:subClassOf rdf:resource="#plWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plVERB">
+  <rdfs:subClassOf rdf:resource="#plWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plADJ">
+  <rdfs:subClassOf rdf:resource="#plWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plADV">
+  <rdfs:subClassOf rdf:resource="#plWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plPRT">
+  <rdfs:subClassOf rdf:resource="#plWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plGRND">
+  <rdfs:subClassOf rdf:resource="#plWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plPREP">
+  <rdfs:subClassOf rdf:resource="#plWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plCONJ">
+  <rdfs:subClassOf rdf:resource="#plWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#plPRONOUN">
+  <rdfs:subClassOf rdf:resource="#plWord"/>
+</owl:Class>
+
+<owl:Class rdf:about="#french">
+  <rdfs:subClassOf rdf:resource="#Etymology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#proto_slavic">
+  <rdfs:subClassOf rdf:resource="#Etymology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#latin">
+  <rdfs:subClassOf rdf:resource="#Etymology"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Morphology">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#именительный">
+  <rdf:type rdf:resource="#case"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#родительный">
+  <rdf:type rdf:resource="#case"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#дательный">
+  <rdf:type rdf:resource="#case"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#винительный">
+  <rdf:type rdf:resource="#case"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#творительный">
+  <rdf:type rdf:resource="#case"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#предложный">
+  <rdf:type rdf:resource="#case"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#звательный">
+  <rdf:type rdf:resource="#case"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#мужской">
+  <rdf:type rdf:resource="#gender"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#женский">
+  <rdf:type rdf:resource="#gender"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#средний">
+  <rdf:type rdf:resource="#gender"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#единственное">
+  <rdf:type rdf:resource="#number"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#множественное">
+  <rdf:type rdf:resource="#number"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#первое">
+  <rdf:type rdf:resource="#person"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#второе">
+  <rdf:type rdf:resource="#person"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#третье">
+  <rdf:type rdf:resource="#person"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#совершенный">
+  <rdf:type rdf:resource="#aspect"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#несовершенный">
+  <rdf:type rdf:resource="#aspect"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#прошедшее">
+  <rdf:type rdf:resource="#tense"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#настоящее">
+  <rdf:type rdf:resource="#tense"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#будущее">
+  <rdf:type rdf:resource="#tense"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#изъявительное">
+  <rdf:type rdf:resource="#mood"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#повелительное">
+  <rdf:type rdf:resource="#mood"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#праслав. *čęstь">
+  <rdf:type rdf:resource="#proto_slavic"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#лат. elementum">
+  <rdf:type rdf:resource="#latin"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#франц. détail">
+  <rdf:type rdf:resource="#french"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#1">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#baza">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isTranslationOf rdf:resource="#база"/>
+  <isInTable rdf:resource="#1"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#база">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isInTable rdf:resource="#1"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#2">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#danych">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#dane"/>
+  <isTranslationOf rdf:resource="#данных"/>
+  <isInTable rdf:resource="#2"/>
+  <isInTable rdf:resource="#5"/>
+  <isInTable rdf:resource="#32"/>
+  <isInTable rdf:resource="#181"/>
+  <isInTable rdf:resource="#188"/>
+  <isInTable rdf:resource="#231"/>
+  <isTranslationOf rdf:resource="#данными"/>
+  <isInTable rdf:resource="#235"/>
+  <isInTable rdf:resource="#245"/>
+  <isInTable rdf:resource="#257"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#dane">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#dany"/>
+  <isTranslationOf rdf:resource="#данные"/>
+  <isInTable rdf:resource="#15"/>
+  <isInTable rdf:resource="#249"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#данных">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#данные"/>
+  <isInTable rdf:resource="#2"/>
+  <isInTable rdf:resource="#5"/>
+  <isInTable rdf:resource="#32"/>
+  <isInTable rdf:resource="#181"/>
+  <isInTable rdf:resource="#188"/>
+  <isInTable rdf:resource="#231"/>
+  <isInTable rdf:resource="#245"/>
+  <isInTable rdf:resource="#257"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#данные">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#дать"/>
+  <isInTable rdf:resource="#15"/>
+  <isInTable rdf:resource="#249"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#3">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#4">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#zbiór">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isTranslationOf rdf:resource="#совокупность"/>
+  <isInTable rdf:resource="#4"/>
+  <isTranslationOf rdf:resource="#набор"/>
+  <isInTable rdf:resource="#187"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#совокупность">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#винительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isInTable rdf:resource="#4"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#5">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#6">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#zapisanych">
+  <rdf:type rdf:resource="#plPRT"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <isFormOf rdf:resource="#zapisać"/>
+  <isTranslationOf rdf:resource="#хранящихся"/>
+  <isInTable rdf:resource="#6"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#zapisać">
+  <rdf:type rdf:resource="#plPRT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#хранящихся">
+  <rdf:type rdf:resource="#ruPRT"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasTense rdf:resource="#настоящее"/>
+  <isFormOf rdf:resource="#храниться"/>
+  <isInTable rdf:resource="#6"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#храниться">
+  <rdf:type rdf:resource="#ruPRT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#7">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#zgodnie">
+  <rdf:type rdf:resource="#plADV"/>
+  <isTranslationOf rdf:resource="#в"/>
+  <isInTable rdf:resource="#7"/>
+  <isInTable rdf:resource="#18"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#в">
+  <rdf:type rdf:resource="#ruADV"/>
+  <isInTable rdf:resource="#7"/>
+  <rdf:type rdf:resource="#ruPREP"/>
+  <isInTable rdf:resource="#11"/>
+  <isInTable rdf:resource="#18"/>
+  <isInTable rdf:resource="#27"/>
+  <isInTable rdf:resource="#171"/>
+  <isInTable rdf:resource="#196"/>
+  <isInTable rdf:resource="#206"/>
+  <isInTable rdf:resource="#233"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#8">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#z">
+  <rdf:type rdf:resource="#plPREP"/>
+  <isTranslationOf rdf:resource="#с"/>
+  <isInTable rdf:resource="#8"/>
+  <isInTable rdf:resource="#19"/>
+  <isTranslationOf rdf:resource="#от"/>
+  <isInTable rdf:resource="#173"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#с">
+  <rdf:type rdf:resource="#ruPREP"/>
+  <isInTable rdf:resource="#8"/>
+  <isInTable rdf:resource="#19"/>
+  <isInTable rdf:resource="#234"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#9">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#określonymi">
+  <rdf:type rdf:resource="#plPRT"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <isFormOf rdf:resource="#określić"/>
+  <isTranslationOf rdf:resource="#определенными"/>
+  <isInTable rdf:resource="#9"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#określić">
+  <rdf:type rdf:resource="#plPRT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#определенными">
+  <rdf:type rdf:resource="#ruPRT"/>
+  <hasCase rdf:resource="#творительный"/>
+  <isFormOf rdf:resource="#определённый"/>
+  <isInTable rdf:resource="#9"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#определённый">
+  <rdf:type rdf:resource="#ruPRT"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#10">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#regułami">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#reguła"/>
+  <isTranslationOf rdf:resource="#правилами"/>
+  <isInTable rdf:resource="#10"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#reguła">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#правилами">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#правило"/>
+  <isInTable rdf:resource="#10"/>
+  <isInTable rdf:resource="#20"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#правило">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#11">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#w">
+  <rdf:type rdf:resource="#plPREP"/>
+  <isTranslationOf rdf:resource="#в"/>
+  <isInTable rdf:resource="#11"/>
+  <isInTable rdf:resource="#27"/>
+  <isInTable rdf:resource="#171"/>
+  <isInTable rdf:resource="#203"/>
+  <isInTable rdf:resource="#206"/>
+  <isTranslationOf rdf:resource="#для"/>
+  <isInTable rdf:resource="#219"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#12">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#węższym">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isTranslationOf rdf:resource="#более"/>
+  <isInTable rdf:resource="#12"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#более">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <isInTable rdf:resource="#12"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#13">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#znaczeniu">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#предложный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#znaczenie"/>
+  <isTranslationOf rdf:resource="#смысле"/>
+  <isInTable rdf:resource="#13"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#znaczenie">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#смысле">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#предложный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#смысл"/>
+  <isInTable rdf:resource="#13"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#смысл">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#14">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#obejmuje">
+  <rdf:type rdf:resource="#plVERB"/>
+  <hasAspect rdf:resource="#несовершенный"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <hasPerson rdf:resource="#третье"/>
+  <hasMood rdf:resource="#изъявительное"/>
+  <hasTense rdf:resource="#настоящее"/>
+  <isFormOf rdf:resource="#obejmować"/>
+  <isTranslationOf rdf:resource="#охватывает"/>
+  <isInTable rdf:resource="#14"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#obejmować">
+  <rdf:type rdf:resource="#plVERB"/>
+  <hasAspect rdf:resource="#несовершенный"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#охватывает">
+  <rdf:type rdf:resource="#ruVERB"/>
+  <hasAspect rdf:resource="#несовершенный"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <hasPerson rdf:resource="#третье"/>
+  <hasMood rdf:resource="#изъявительное"/>
+  <hasTense rdf:resource="#настоящее"/>
+  <isFormOf rdf:resource="#охватывать"/>
+  <isInTable rdf:resource="#14"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#охватывать">
+  <rdf:type rdf:resource="#ruVERB"/>
+  <hasAspect rdf:resource="#несовершенный"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#15">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#dany">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <rdf:type rdf:resource="#plADJ"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#дать">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <rdf:type rdf:resource="#ruADJ"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#16">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cyfrowe">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#cyfrowy"/>
+  <isTranslationOf rdf:resource="#цифровые"/>
+  <isInTable rdf:resource="#16"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cyfrowy">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#цифровые">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#цифровой"/>
+  <isInTable rdf:resource="#16"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#цифровой">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#17">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#gromadzone">
+  <rdf:type rdf:resource="#plPRT"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <isFormOf rdf:resource="#gromadzoć"/>
+  <isTranslationOf rdf:resource="#собранные"/>
+  <isInTable rdf:resource="#17"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#gromadzoć">
+  <rdf:type rdf:resource="#plPRT"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasGender rdf:resource="#средний"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#собранные">
+  <rdf:type rdf:resource="#ruPRT"/>
+  <hasCase rdf:resource="#именительный"/>
+  <isFormOf rdf:resource="#собранный"/>
+  <isInTable rdf:resource="#17"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#собранный">
+  <rdf:type rdf:resource="#ruPRT"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#18">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#19">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#20">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#zasadami">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#zasada"/>
+  <isTranslationOf rdf:resource="#правилами"/>
+  <isInTable rdf:resource="#20"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#zasada">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#21">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#przyjętymi">
+  <rdf:type rdf:resource="#plPRT"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <isFormOf rdf:resource="#przyjąć"/>
+  <isTranslationOf rdf:resource="#принятыми"/>
+  <isInTable rdf:resource="#21"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#przyjąć">
+  <rdf:type rdf:resource="#plPRT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#принятыми">
+  <rdf:type rdf:resource="#ruPRT"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasTense rdf:resource="#прошедшее"/>
+  <isFormOf rdf:resource="#принять"/>
+  <isInTable rdf:resource="#21"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#принять">
+  <rdf:type rdf:resource="#ruPRT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#22">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#dla">
+  <rdf:type rdf:resource="#plPREP"/>
+  <isTranslationOf rdf:resource="#для"/>
+  <isInTable rdf:resource="#22"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#для">
+  <rdf:type rdf:resource="#ruPREP"/>
+  <isInTable rdf:resource="#22"/>
+  <isInTable rdf:resource="#213"/>
+  <isInTable rdf:resource="#219"/>
+  <isInTable rdf:resource="#228"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#23">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#danego">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#dany"/>
+  <isTranslationOf rdf:resource="#данной"/>
+  <isInTable rdf:resource="#23"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#данной">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#дать"/>
+  <isInTable rdf:resource="#23"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#24">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programu">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#program"/>
+  <isTranslationOf rdf:resource="#программы"/>
+  <isInTable rdf:resource="#24"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#program">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isTranslationOf rdf:resource="#программа"/>
+  <isInTable rdf:resource="#161"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#программы">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#программа"/>
+  <isInTable rdf:resource="#24"/>
+  <isInTable rdf:resource="#227"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#программа">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isInTable rdf:resource="#161"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#25">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#komputerowego">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#komputerowy"/>
+  <isTranslationOf rdf:resource="#компьютерной"/>
+  <isInTable rdf:resource="#25"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#komputerowy">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#компьютерной">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#компьютерный"/>
+  <isInTable rdf:resource="#25"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#компьютерный">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#26">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#specjalizowanego">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#specjalizowany"/>
+  <isTranslationOf rdf:resource="#специализирующейся"/>
+  <isInTable rdf:resource="#26"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#specjalizowany">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#специализирующейся">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#дательный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#специализироваться"/>
+  <isInTable rdf:resource="#26"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#специализироваться">
+  <rdf:type rdf:resource="#ruADJ"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#27">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#28">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#gromadzeniu">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#предложный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#gromadzeć"/>
+  <isTranslationOf rdf:resource="#сборе"/>
+  <isInTable rdf:resource="#28"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#gromadzeć">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#множественное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#сборе">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#предложный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#сбор"/>
+  <isInTable rdf:resource="#28"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#сбор">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#винительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#29">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#i">
+  <rdf:type rdf:resource="#plCONJ"/>
+  <isTranslationOf rdf:resource="#и"/>
+  <isInTable rdf:resource="#29"/>
+  <isInTable rdf:resource="#193"/>
+  <isInTable rdf:resource="#237"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#и">
+  <rdf:type rdf:resource="#ruCONJ"/>
+  <isInTable rdf:resource="#29"/>
+  <isInTable rdf:resource="#193"/>
+  <isInTable rdf:resource="#237"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#30">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#przetwarzaniu">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#дательный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#przetwarzać"/>
+  <isTranslationOf rdf:resource="#обработке"/>
+  <isInTable rdf:resource="#30"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#przetwarzać">
+  <rdf:type rdf:resource="#plNOUN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#обработке">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#предложный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#обработка"/>
+  <isInTable rdf:resource="#30"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#обработка">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#31">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#tych">
+  <rdf:type rdf:resource="#plPRONOUN"/>
+  <isFormOf rdf:resource="#ten"/>
+  <isTranslationOf rdf:resource="#таких"/>
+  <isInTable rdf:resource="#31"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ten">
+  <rdf:type rdf:resource="#plPRONOUN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#таких">
+  <rdf:type rdf:resource="#ruPRONOUN"/>
+  <isFormOf rdf:resource="#такой"/>
+  <isInTable rdf:resource="#31"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#такой">
+  <rdf:type rdf:resource="#ruPRONOUN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#32">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#161">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#162">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#taki">
+  <rdf:type rdf:resource="#plPRONOUN"/>
+  <isTranslationOf rdf:resource="#такая"/>
+  <isInTable rdf:resource="#162"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#такая">
+  <rdf:type rdf:resource="#ruPRONOUN"/>
+  <isFormOf rdf:resource="#такой"/>
+  <isInTable rdf:resource="#162"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#163">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#często">
+  <rdf:type rdf:resource="#plADV"/>
+  <isTranslationOf rdf:resource="#часто"/>
+  <isInTable rdf:resource="#163"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#часто">
+  <rdf:type rdf:resource="#ruADV"/>
+  <isInTable rdf:resource="#163"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#164">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pakiet">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isTranslationOf rdf:resource="#пакет"/>
+  <isInTable rdf:resource="#164"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#пакет">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#винительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isInTable rdf:resource="#164"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#165">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programów">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#program"/>
+  <isTranslationOf rdf:resource="#программ"/>
+  <isInTable rdf:resource="#165"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#программ">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#программа"/>
+  <isInTable rdf:resource="#165"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#166">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#nazywany">
+  <rdf:type rdf:resource="#plPRT"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <isFormOf rdf:resource="#nazywać"/>
+  <isTranslationOf rdf:resource="#называется"/>
+  <isInTable rdf:resource="#166"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#nazywać">
+  <rdf:type rdf:resource="#plPRT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#называется">
+  <rdf:type rdf:resource="#ruPRT"/>
+  <hasTense rdf:resource="#настоящее"/>
+  <isFormOf rdf:resource="#называться"/>
+  <isInTable rdf:resource="#166"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#называться">
+  <rdf:type rdf:resource="#ruPRT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#167">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#jest">
+  <rdf:type rdf:resource="#plVERB"/>
+  <hasAspect rdf:resource="#несовершенный"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <hasPerson rdf:resource="#третье"/>
+  <hasMood rdf:resource="#изъявительное"/>
+  <hasTense rdf:resource="#настоящее"/>
+  <isFormOf rdf:resource="#być"/>
+  <isInTable rdf:resource="#167"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#być">
+  <rdf:type rdf:resource="#plVERB"/>
+  <hasAspect rdf:resource="#несовершенный"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#168">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#systemem">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#system"/>
+  <isTranslationOf rdf:resource="#системой"/>
+  <isInTable rdf:resource="#168"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#system">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#системой">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#система"/>
+  <isInTable rdf:resource="#168"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#система">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#169">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#zarządzania">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#zarządzanie"/>
+  <isTranslationOf rdf:resource="#управления"/>
+  <isInTable rdf:resource="#169"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#zarządzanie">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#управления">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#управление"/>
+  <isInTable rdf:resource="#169"/>
+  <isInTable rdf:resource="#229"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#управление">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#170">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#bazą">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#baza"/>
+  <isTranslationOf rdf:resource="#базами"/>
+  <isInTable rdf:resource="#170"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#базами">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#база"/>
+  <isInTable rdf:resource="#170"/>
+  <isInTable rdf:resource="#230"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#171">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#172">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ustawie">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#дательный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#ustawa"/>
+  <isTranslationOf rdf:resource="#законе"/>
+  <isInTable rdf:resource="#172"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ustawa">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#законе">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#предложный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#закон"/>
+  <isInTable rdf:resource="#172"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#закон">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#173">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#от">
+  <rdf:type rdf:resource="#ruPREP"/>
+  <isInTable rdf:resource="#173"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#174">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#175">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lipca">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#lipiec"/>
+  <isTranslationOf rdf:resource="#июля"/>
+  <isInTable rdf:resource="#175"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lipiec">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#июля">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#июль"/>
+  <isInTable rdf:resource="#175"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#июль">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#винительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#176">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#2001">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <rdf:type rdf:resource="#ruADJ"/>
+  <isTranslationOf rdf:resource="#2001"/>
+  <isInTable rdf:resource="#176"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#177">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#178">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#o">
+  <rdf:type rdf:resource="#plPREP"/>
+  <isTranslationOf rdf:resource="#о"/>
+  <isInTable rdf:resource="#178"/>
+  <isTranslationOf rdf:resource="#неструктурированные"/>
+  <isInTable rdf:resource="#250"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#о">
+  <rdf:type rdf:resource="#ruPREP"/>
+  <isInTable rdf:resource="#178"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#179">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ochronie">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#дательный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#ochrona"/>
+  <isTranslationOf rdf:resource="#защите"/>
+  <isInTable rdf:resource="#179"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ochrona">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#защите">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#предложный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#защита"/>
+  <isInTable rdf:resource="#179"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#защита">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#180">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#baz">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#baza"/>
+  <isTranslationOf rdf:resource="#баз"/>
+  <isInTable rdf:resource="#180"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#баз">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#база"/>
+  <isInTable rdf:resource="#180"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#181">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#182">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#to">
+  <rdf:type rdf:resource="#plVERB"/>
+  <hasMood rdf:resource="#изъявительное"/>
+  <hasTense rdf:resource="#настоящее"/>
+  <isTranslationOf rdf:resource="#это"/>
+  <isInTable rdf:resource="#182"/>
+  <rdf:type rdf:resource="#plPRONOUN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#это">
+  <rdf:type rdf:resource="#ruVERB"/>
+  <isInTable rdf:resource="#182"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#183">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pojęcie">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isTranslationOf rdf:resource="#понятие"/>
+  <isInTable rdf:resource="#183"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#понятие">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isInTable rdf:resource="#183"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#184">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#zostało">
+  <rdf:type rdf:resource="#plVERB"/>
+  <hasAspect rdf:resource="#совершенный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <hasMood rdf:resource="#изъявительное"/>
+  <hasTense rdf:resource="#прошедшее"/>
+  <isFormOf rdf:resource="#zostać"/>
+  <isTranslationOf rdf:resource="#было"/>
+  <isInTable rdf:resource="#184"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#zostać">
+  <rdf:type rdf:resource="#plVERB"/>
+  <hasAspect rdf:resource="#совершенный"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#было">
+  <rdf:type rdf:resource="#ruVERB"/>
+  <hasAspect rdf:resource="#несовершенный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <hasMood rdf:resource="#изъявительное"/>
+  <hasTense rdf:resource="#прошедшее"/>
+  <isFormOf rdf:resource="#быть"/>
+  <isInTable rdf:resource="#184"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#быть">
+  <rdf:type rdf:resource="#ruVERB"/>
+  <hasAspect rdf:resource="#несовершенный"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#185">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#zdefiniowane">
+  <rdf:type rdf:resource="#plPRT"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <isFormOf rdf:resource="#zdefiniować"/>
+  <isTranslationOf rdf:resource="#определено"/>
+  <isInTable rdf:resource="#185"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#zdefiniować">
+  <rdf:type rdf:resource="#plPRT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#определено">
+  <rdf:type rdf:resource="#ruPRT"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasTense rdf:resource="#прошедшее"/>
+  <isFormOf rdf:resource="#определить"/>
+  <isInTable rdf:resource="#185"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#определить">
+  <rdf:type rdf:resource="#ruPRT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#186">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#187">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#набор">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isInTable rdf:resource="#187"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#188">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#189">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lub">
+  <rdf:type rdf:resource="#plCONJ"/>
+  <isTranslationOf rdf:resource="#или"/>
+  <isInTable rdf:resource="#189"/>
+  <isInTable rdf:resource="#199"/>
+  <isInTable rdf:resource="#215"/>
+  <isInTable rdf:resource="#223"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#или">
+  <rdf:type rdf:resource="#ruCONJ"/>
+  <isInTable rdf:resource="#189"/>
+  <isInTable rdf:resource="#199"/>
+  <isInTable rdf:resource="#215"/>
+  <isInTable rdf:resource="#223"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#190">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#jakichkolwiek">
+  <rdf:type rdf:resource="#plPRONOUN"/>
+  <isFormOf rdf:resource="#jakikolwiek"/>
+  <isTranslationOf rdf:resource="#любых"/>
+  <isInTable rdf:resource="#190"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#jakikolwiek">
+  <rdf:type rdf:resource="#plPRONOUN"/>
+  <isTranslationOf rdf:resource="#любым"/>
+  <isInTable rdf:resource="#204"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#любых">
+  <rdf:type rdf:resource="#ruPRONOUN"/>
+  <isFormOf rdf:resource="#любой"/>
+  <isInTable rdf:resource="#190"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#любой">
+  <rdf:type rdf:resource="#ruPRONOUN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#191">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#innych">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#inny"/>
+  <isTranslationOf rdf:resource="#других"/>
+  <isInTable rdf:resource="#191"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#inny">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#других">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#другой"/>
+  <isInTable rdf:resource="#191"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#другой">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#192">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#materiałów">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#materiał"/>
+  <isTranslationOf rdf:resource="#материалов"/>
+  <isInTable rdf:resource="#192"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#materiał">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#материалов">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#материал"/>
+  <isInTable rdf:resource="#192"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#материал">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#193">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#194">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#elementów">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#element"/>
+  <isTranslationOf rdf:resource="#элементов"/>
+  <isInTable rdf:resource="#194"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#element">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#элементов">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#элемент"/>
+  <isInTable rdf:resource="#194"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#элемент">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#195">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#zgromadzonych">
+  <rdf:type rdf:resource="#plPRT"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <isFormOf rdf:resource="#zgromadzić"/>
+  <isTranslationOf rdf:resource="#собранных"/>
+  <isInTable rdf:resource="#195"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#zgromadzić">
+  <rdf:type rdf:resource="#plPRT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#собранных">
+  <rdf:type rdf:resource="#ruPRT"/>
+  <hasCase rdf:resource="#родительный"/>
+  <isFormOf rdf:resource="#собранный"/>
+  <isInTable rdf:resource="#195"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#196">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#według">
+  <rdf:type rdf:resource="#plPREP"/>
+  <isTranslationOf rdf:resource="#в"/>
+  <isInTable rdf:resource="#196"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#197">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#określonej">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#określony"/>
+  <isTranslationOf rdf:resource="#определенной"/>
+  <isInTable rdf:resource="#197"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#określony">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#определенной">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#определённый"/>
+  <isInTable rdf:resource="#197"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#198">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#systematyki">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#systematyka"/>
+  <isTranslationOf rdf:resource="#систематикой"/>
+  <isInTable rdf:resource="#198"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#systematyka">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#систематикой">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#систематика"/>
+  <isInTable rdf:resource="#198"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#систематика">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#199">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#200">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#metody">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#metoda"/>
+  <isTranslationOf rdf:resource="#методом"/>
+  <isInTable rdf:resource="#200"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#metoda">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#методом">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#метод"/>
+  <isInTable rdf:resource="#200"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#метод">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#201">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#indywidualnie">
+  <rdf:type rdf:resource="#plADV"/>
+  <isTranslationOf rdf:resource="#индивидуально"/>
+  <isInTable rdf:resource="#201"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#индивидуально">
+  <rdf:type rdf:resource="#ruADV"/>
+  <isInTable rdf:resource="#201"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#202">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#dostępnych">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#dostępny"/>
+  <isTranslationOf rdf:resource="#доступных"/>
+  <isInTable rdf:resource="#202"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#dostępny">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#доступных">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#доступный"/>
+  <isInTable rdf:resource="#202"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#доступный">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#203">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#204">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#любым">
+  <rdf:type rdf:resource="#ruPRONOUN"/>
+  <isFormOf rdf:resource="#любой"/>
+  <isInTable rdf:resource="#204"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#205">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sposób">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#винительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isTranslationOf rdf:resource="#способом"/>
+  <isInTable rdf:resource="#205"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#способом">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#способ"/>
+  <isInTable rdf:resource="#205"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#способ">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#206">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#207">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#tym">
+  <rdf:type rdf:resource="#plPRONOUN"/>
+  <isFormOf rdf:resource="#to"/>
+  <isInTable rdf:resource="#207"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#208">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#środkami">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#środki"/>
+  <isTranslationOf rdf:resource="#средствами"/>
+  <isInTable rdf:resource="#208"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#środki">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#множественное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#средствами">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#средство"/>
+  <isInTable rdf:resource="#208"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#средство">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#209">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#elektronicznymi">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isTranslationOf rdf:resource="#электронными"/>
+  <isInTable rdf:resource="#209"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#электронными">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#электронный"/>
+  <isInTable rdf:resource="#209"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#электронный">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#210">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#wymagający">
+  <rdf:type rdf:resource="#plPRT"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <isTranslationOf rdf:resource="#требующими"/>
+  <isInTable rdf:resource="#210"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#требующими">
+  <rdf:type rdf:resource="#ruPRT"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasTense rdf:resource="#настоящее"/>
+  <isFormOf rdf:resource="#требовать"/>
+  <isInTable rdf:resource="#210"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#требовать">
+  <rdf:type rdf:resource="#ruPRT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#211">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#istotnego">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#istotny"/>
+  <isTranslationOf rdf:resource="#значительных"/>
+  <isInTable rdf:resource="#211"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#istotny">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#значительных">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#значительный"/>
+  <isInTable rdf:resource="#211"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#значительный">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#винительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#212">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#co">
+  <rdf:type rdf:resource="#plPRONOUN"/>
+  <isTranslationOf rdf:resource="#что"/>
+  <isInTable rdf:resource="#212"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#что">
+  <rdf:type rdf:resource="#ruPRONOUN"/>
+  <isInTable rdf:resource="#212"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#213">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#do">
+  <rdf:type rdf:resource="#plPREP"/>
+  <isTranslationOf rdf:resource="#для"/>
+  <isInTable rdf:resource="#213"/>
+  <isInTable rdf:resource="#228"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#214">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#jakości">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#jakość"/>
+  <isTranslationOf rdf:resource="#качества"/>
+  <isInTable rdf:resource="#214"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#jakość">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#качества">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#качество"/>
+  <isInTable rdf:resource="#214"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#качество">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#винительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#215">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#216">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ilości">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#ilość"/>
+  <isTranslationOf rdf:resource="#количества"/>
+  <isInTable rdf:resource="#216"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ilość">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#количества">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#количество"/>
+  <isInTable rdf:resource="#216"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#количество">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#217">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#nakładu">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#nakład"/>
+  <isTranslationOf rdf:resource="#затрат"/>
+  <isInTable rdf:resource="#217"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#nakład">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#затрат">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#затрата"/>
+  <isInTable rdf:resource="#217"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#затрата">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#218">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#inwestycyjnego">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#inwestycyjny"/>
+  <isTranslationOf rdf:resource="#инвестиционных"/>
+  <isInTable rdf:resource="#218"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#inwestycyjny">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#инвестиционных">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#инвестиционный"/>
+  <isInTable rdf:resource="#218"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#инвестиционный">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#219">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#220">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#celu">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#cel"/>
+  <isInTable rdf:resource="#220"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cel">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#221">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sporządzenia">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#sporządzeć"/>
+  <isTranslationOf rdf:resource="#подготовки"/>
+  <isInTable rdf:resource="#221"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sporządzeć">
+  <rdf:type rdf:resource="#plNOUN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#подготовки">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#подготовка"/>
+  <isInTable rdf:resource="#221"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#подготовка">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#222">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#weryfikacji">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#weryfikacja"/>
+  <isTranslationOf rdf:resource="#верификации"/>
+  <isInTable rdf:resource="#222"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#weryfikacja">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#верификации">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#верификация"/>
+  <isInTable rdf:resource="#222"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#верификация">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#223">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#224">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#prezentacji">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#prezentacja"/>
+  <isTranslationOf rdf:resource="#представлении"/>
+  <isInTable rdf:resource="#224"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#prezentacja">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#представлении">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#предложный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#представление"/>
+  <isInTable rdf:resource="#224"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#представление">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#винительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#225">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#jego">
+  <rdf:type rdf:resource="#plPRONOUN"/>
+  <isFormOf rdf:resource="#on"/>
+  <isTranslationOf rdf:resource="#их"/>
+  <isInTable rdf:resource="#225"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#on">
+  <rdf:type rdf:resource="#plPRONOUN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#их">
+  <rdf:type rdf:resource="#ruPRONOUN"/>
+  <isFormOf rdf:resource="#они"/>
+  <isInTable rdf:resource="#225"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#они">
+  <rdf:type rdf:resource="#ruPRONOUN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#226">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#zawartości">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#zawartość"/>
+  <isTranslationOf rdf:resource="#содержания"/>
+  <isInTable rdf:resource="#226"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#zawartość">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#содержания">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#содержание"/>
+  <isInTable rdf:resource="#226"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#содержание">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#227">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programy">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#program"/>
+  <isTranslationOf rdf:resource="#программы"/>
+  <isInTable rdf:resource="#227"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#228">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#229">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#obsługi">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#obsługa"/>
+  <isTranslationOf rdf:resource="#управления"/>
+  <isInTable rdf:resource="#229"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#obsługa">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#230">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#bazy">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#baza"/>
+  <isTranslationOf rdf:resource="#базами"/>
+  <isInTable rdf:resource="#230"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#231">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#232">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#operują">
+  <rdf:type rdf:resource="#plVERB"/>
+  <hasAspect rdf:resource="#несовершенный"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <hasPerson rdf:resource="#третье"/>
+  <hasMood rdf:resource="#изъявительное"/>
+  <hasTense rdf:resource="#настоящее"/>
+  <isFormOf rdf:resource="#operować"/>
+  <isTranslationOf rdf:resource="#работают"/>
+  <isInTable rdf:resource="#232"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#operować">
+  <rdf:type rdf:resource="#plVERB"/>
+  <hasAspect rdf:resource="#несовершенный"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#работают">
+  <rdf:type rdf:resource="#ruVERB"/>
+  <hasAspect rdf:resource="#несовершенный"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <hasPerson rdf:resource="#третье"/>
+  <hasMood rdf:resource="#изъявительное"/>
+  <hasTense rdf:resource="#настоящее"/>
+  <isFormOf rdf:resource="#работать"/>
+  <isInTable rdf:resource="#232"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#работать">
+  <rdf:type rdf:resource="#ruVERB"/>
+  <hasAspect rdf:resource="#несовершенный"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#233">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#głównie">
+  <rdf:type rdf:resource="#plADV"/>
+  <isTranslationOf rdf:resource="#в"/>
+  <isInTable rdf:resource="#233"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#234">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#na">
+  <rdf:type rdf:resource="#plPREP"/>
+  <isTranslationOf rdf:resource="#с"/>
+  <isInTable rdf:resource="#234"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#235">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#данными">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#данные"/>
+  <isInTable rdf:resource="#235"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#236">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#tekstowych">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#tekstowy"/>
+  <isTranslationOf rdf:resource="#текстовыми"/>
+  <isInTable rdf:resource="#236"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#tekstowy">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#винительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#текстовыми">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#текстовый"/>
+  <isInTable rdf:resource="#236"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#текстовый">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#237">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#238">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#liczbowych">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#liczbowy"/>
+  <isTranslationOf rdf:resource="#числовыми"/>
+  <isInTable rdf:resource="#238"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#liczbowy">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#числовыми">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#творительный"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#числовой"/>
+  <isInTable rdf:resource="#238"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#числовой">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#239">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lecz">
+  <rdf:type rdf:resource="#plCONJ"/>
+  <isTranslationOf rdf:resource="#но"/>
+  <isInTable rdf:resource="#239"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#но">
+  <rdf:type rdf:resource="#ruCONJ"/>
+  <isInTable rdf:resource="#239"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#240">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#większość">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isTranslationOf rdf:resource="#большинство"/>
+  <isInTable rdf:resource="#240"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#большинство">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isInTable rdf:resource="#240"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#241">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#współczesnych">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#współczesny"/>
+  <isTranslationOf rdf:resource="#современных"/>
+  <isInTable rdf:resource="#241"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#współczesny">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#современных">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#современный"/>
+  <isInTable rdf:resource="#241"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#современный">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#242">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#systemów">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#system"/>
+  <isTranslationOf rdf:resource="#систем"/>
+  <isInTable rdf:resource="#242"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#систем">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#система"/>
+  <isInTable rdf:resource="#242"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#243">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#umożliwia">
+  <rdf:type rdf:resource="#plVERB"/>
+  <hasAspect rdf:resource="#несовершенный"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <hasPerson rdf:resource="#третье"/>
+  <hasMood rdf:resource="#изъявительное"/>
+  <hasTense rdf:resource="#настоящее"/>
+  <isFormOf rdf:resource="#umożliwiać"/>
+  <isTranslationOf rdf:resource="#позволяют"/>
+  <isInTable rdf:resource="#243"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#umożliwiać">
+  <rdf:type rdf:resource="#plVERB"/>
+  <hasAspect rdf:resource="#несовершенный"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#позволяют">
+  <rdf:type rdf:resource="#ruVERB"/>
+  <hasAspect rdf:resource="#несовершенный"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <hasPerson rdf:resource="#третье"/>
+  <hasMood rdf:resource="#изъявительное"/>
+  <hasTense rdf:resource="#настоящее"/>
+  <isFormOf rdf:resource="#позволять"/>
+  <isInTable rdf:resource="#243"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#позволять">
+  <rdf:type rdf:resource="#ruVERB"/>
+  <hasAspect rdf:resource="#несовершенный"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#244">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#przechowywanie">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#przechowywać"/>
+  <isTranslationOf rdf:resource="#хранение"/>
+  <isInTable rdf:resource="#244"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#przechowywać">
+  <rdf:type rdf:resource="#plNOUN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#хранение">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#винительный"/>
+  <hasGender rdf:resource="#средний"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isInTable rdf:resource="#244"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#245">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#246">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cyfrowych">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#cyfrowy"/>
+  <isTranslationOf rdf:resource="#цифровых"/>
+  <isInTable rdf:resource="#246"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#цифровых">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#цифровой"/>
+  <isInTable rdf:resource="#246"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#247">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#różnego">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#różny"/>
+  <isTranslationOf rdf:resource="#разного"/>
+  <isInTable rdf:resource="#247"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#różny">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#разного">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#разный"/>
+  <isInTable rdf:resource="#247"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#разный">
+  <rdf:type rdf:resource="#ruADJ"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#248">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#typu">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#typ"/>
+  <isTranslationOf rdf:resource="#типа"/>
+  <isInTable rdf:resource="#248"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#typ">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#типа">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#тип"/>
+  <isInTable rdf:resource="#248"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#тип">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#249">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#250">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#неструктурированные">
+  <rdf:type rdf:resource="#ruPREP"/>
+  <isFormOf rdf:resource="#неструктурированный"/>
+  <isInTable rdf:resource="#250"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#неструктурированный">
+  <rdf:type rdf:resource="#ruPREP"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#251">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#nieokreślonej">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#nieokreślony"/>
+  <isInTable rdf:resource="#251"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#nieokreślony">
+  <rdf:type rdf:resource="#plADJ"/>
+  <hasCase rdf:resource="#родительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#множественное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#252">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#strukturze">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#дательный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isFormOf rdf:resource="#struktura"/>
+  <isInTable rdf:resource="#252"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#struktura">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#253">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#grafika">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isTranslationOf rdf:resource="#графика"/>
+  <isInTable rdf:resource="#253"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#графика">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isInTable rdf:resource="#253"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#254">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#muzyka">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isTranslationOf rdf:resource="#музыка"/>
+  <isInTable rdf:resource="#254"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#музыка">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#женский"/>
+  <hasNumber rdf:resource="#единственное"/>
+  <isInTable rdf:resource="#254"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#255">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#obiekty">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#obiekt"/>
+  <isTranslationOf rdf:resource="#объекты"/>
+  <isInTable rdf:resource="#255"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#obiekt">
+  <rdf:type rdf:resource="#plNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#объекты">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#именительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#множественное"/>
+  <isFormOf rdf:resource="#объект"/>
+  <isInTable rdf:resource="#255"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#объект">
+  <rdf:type rdf:resource="#ruNOUN"/>
+  <hasCase rdf:resource="#винительный"/>
+  <hasGender rdf:resource="#мужской"/>
+  <hasNumber rdf:resource="#единственное"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#256">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#257">
+  <rdf:type rdf:resource="#TableID"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>

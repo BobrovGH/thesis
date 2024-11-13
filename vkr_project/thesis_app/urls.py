@@ -1,13 +1,16 @@
 from django.urls import path
 
-from .views import SignUpView, home_view_test, reader_view, home_view, reader_view_test, get_word_analysis
+from .views import SignUpView, reader_view, home_view, get_word_analysis, get_word_data, dictionary_view, delete_word, add_to_dictionary, yandex_form_view
 
 
 urlpatterns = [
     path("signup/", SignUpView.as_view(), name="signup"),
-    path("", home_view, name="home_page"),  # home page
+    path("", home_view, name="home_page"),
     path('reader_view/<int:text_id>/', reader_view, name="reader_page"),
-    path("home_test", home_view_test, name="home_page_test"),  # home page test
-    path('reader_view_test/', reader_view_test, name="reader_page"),
-    path('get_word_analysis/', get_word_analysis, name='get_word_analysis')
+    path('dictionary/', dictionary_view, name='dictionary'),
+    path('get_word_analysis/', get_word_analysis, name='get_word_analysis'),
+    path('get_word_data/<str:word_id>/', get_word_data, name='get_word_data'),
+    path('dictionary/delete/<int:id>/', delete_word, name='delete_word'),
+    path('add_to_dictionary/<int:word_id>/', add_to_dictionary, name='add_to_dictionary'),
+    path('yandex_form/', yandex_form_view, name='yandex_form'),
 ]

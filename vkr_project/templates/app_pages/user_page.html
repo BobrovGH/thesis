@@ -4,15 +4,15 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<p>Hi {{ user.username }}!</p>
-<p><a href="{% url 'password_change' %}">Password Change</a></p>
+<p>Добро пожаловать в личный кабинет, {{ user.username }}!</p>
+<p><a href="{% url 'password_change' %}">Изменить пароль</a></p>
 <form action="{% url 'logout' %}" method="post">
   {% csrf_token %}
-  <button class="btn btn-primary" type="submit">Log Out</button>
+  <button class="btn btn-primary" type="submit">Выйти</button>
 </form>
 {% else %}
-<p>You are not logged in</p>
-<p><a href="{% url 'password_reset' %}">Password Reset</a></p>
-<p><a href="{% url 'login' %}">Log In</a></p>
+<p>Вы не атворизованы</p>
+<p><a href="{% url 'password_reset' %}">Сбросить пароль</a></p>
+<p><a href="{% url 'login' %}">Выйти</a></p>
 {% endif %}
 {% endblock %}

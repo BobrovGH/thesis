@@ -1,16 +1,20 @@
 {% extends "bases/base.html" %}
 
-{% block title %}{{text.title}}{% endblock %}
+{% block title %}{{ text.title }}{% endblock %}
 
 {% block content %}
-
+<h5>Статья "Baza danych"</h5>
 {% for paragraph, sentences in paragraphs.items %}
-        <p>{% for sentence in sentences %}
-          <se>
-            {% for word in sentence %}
-            <w class="word" data-bs-toggle="popover">{{ word }}</w>
-            {% endfor %}
-        </se>
-        {% endfor %}</p>
-        {% endfor %}
+<p>{% for sentence in sentences %}
+  <se>
+    {% for word, index in sentence %}
+    <w class="word" data-bs-toggle="modal" data-bs-target="#wordModal" data-word="{{ word }}" data-index="{{ index }}">{{ word }}</w>
+    {% endfor %}
+  </se>
+  {% endfor %}
+</p>
+{% endfor %}
+
+<!-- Modal structure -->
+{% include "bases/modal.html" %}
 {% endblock %}
