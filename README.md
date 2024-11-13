@@ -38,4 +38,14 @@ python3 manage.py runserver
 ```
 </details>
 
-Сриншоты интерфейса представлены в папке screenshots.
+## Сриншоты интерфейса<p>
+- Каталог текстов для чтения<p>
+![Каталог текстов для чтения](https://github.com/user-attachments/assets/eb44db1a-ca7f-4826-a4e9-e6ed0bf4c734)<p>
+- Читалка с открытой подсказкой для слова<p>
+![Читалка с открытой подсказкой для слова](https://github.com/user-attachments/assets/d1b254a8-566a-4727-8fa1-bb4e78bca865)<p>
+- Пользовательский словарь<p>
+![Пользовательский словарь](https://github.com/user-attachments/assets/e64089ef-1397-4f19-95bc-3beeb449b802)<p>
+
+
+
+
